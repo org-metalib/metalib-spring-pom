@@ -17,4 +17,5 @@ jobs:
           java-version: '11'
           cache: 'maven'
       - name: run `mvn package`
-        run: ./mvnw -B package
+        run: |
+          ./mvnw -B package versions:display-dependency-updates
