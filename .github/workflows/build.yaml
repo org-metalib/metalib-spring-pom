@@ -1,0 +1,20 @@
+name: Build
+
+on: [workflow_dispatch]
+
+jobs:
+  test-project-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+      - name: install java with maven
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          cache: 'maven'
+      - name: run `mvn package`
+        run: |
+          cat ~/.m2/settings.xml
+          ./mvnw -B package
