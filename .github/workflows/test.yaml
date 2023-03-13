@@ -18,4 +18,4 @@ jobs:
           cache: 'maven'
       - name: run `mvn package`
         run: |
-          ./mvnw -B package versions:display-dependency-updates
+          ./mvnw -B package
