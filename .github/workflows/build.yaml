@@ -7,7 +7,7 @@ jobs:
   test-project-build:
     runs-on: ubuntu-latest
     steps:
-      - run apt install gpg-agent
+      - run: apt install gpg-agent
       - name: checkout repository
         uses: actions/checkout@v3
       - name: install java with maven
