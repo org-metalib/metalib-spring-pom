@@ -20,7 +20,6 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.OSSRH_GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.OSSRH_GPG_PASSPHRASE }}
-      - run: apt install gpg-agent
       - name: run `mvn package`
         run: |
           gpg --list-secret-keys
