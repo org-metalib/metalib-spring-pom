@@ -21,7 +21,7 @@ jobs:
           echo "$OSSRH_GPG_PRIVATE_KEY" > ~/.ssh/ossrh-gpg-private.txt 
           echo "$OSSRH_GPG_PUBLIC_KEY" > ~/.ssh/ossrh-gpg-public.txt
           gpg --batch --import ~/.ssh/ossrh-gpg-public.txt
-          #echo "$OSSRH_GPG_PASSPHRASE" | gpg --import ~/.ssh/ossrh-gpg-private.txt
+          echo "$OSSRH_GPG_PASSPHRASE" | gpg --batch --import ~/.ssh/ossrh-gpg-private.txt
       - name: run `mvn package`
         run: |
           gpg --list-secret-keys
