@@ -27,6 +27,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
+                <project.scm.id>github</project.scm.id>
                 <gpg.passphrase>${env.OSSRH_GPG_PASSPHRASE}</gpg.passphrase>
             </properties>
         </profile>
