@@ -20,8 +20,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "$OSSRH_GPG_PRIVATE_KEY" > ~/.ssh/ossrh-gpg-private.txt 
           echo "$OSSRH_GPG_PUBLIC_KEY" > ~/.ssh/ossrh-gpg-public.txt
-          cat ~/.ssh/ossrh-gpg-private.txt
-          cat ~/.ssh/ossrh-gpg-public.txt
+          echo "$OSSRH_GPG_PASSPHRASE" | gpg --import ~/.ssh/ossrh-gpg-private.txt
+          gpg --batch --import ~/.ssh/ossrh-gpg-public.txt
       - name: run `mvn package`
         run: |
           gpg --list-secret-keys
