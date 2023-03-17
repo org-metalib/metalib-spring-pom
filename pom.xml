@@ -4,7 +4,7 @@
 
     <groupId>org.metalib.maven.pom</groupId>
     <artifactId>metalib-spring-pom</artifactId>
-    <version>0.0.16</version>
+    <version>0.0.17-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>metalib-spring-pom</name>
