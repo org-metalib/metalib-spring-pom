@@ -2,5 +2,5 @@ steps:
 - name: bash
   script: |
     #!/usr/bin/env bash
-    echo "Hello World"
-    ./mvnw install
+    echo "=================== Starting"
+    cat /etc/os-release
