@@ -8,9 +8,8 @@ steps:
     export OSSRH_USERNAME=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_USERNAME)
     export OSSRH_PASSWORD=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PASSWORD)
     export OSSRH_GPG_PASSPHRASE=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_GPG_PASSPHRASE)
-    export OSSRH_PUBLIC_KEY=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PUBLIC_KEY)
-    export OSSRH_PRIVATE_KEY=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PRIVATE_KEY)
-    echo $OSSRH_PPUBLIC_KEY | gpg --batch --import
+    echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PUBLIC_KEY | gpg --batch --import
+    echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PRIVATE_KEY | gpg --batch --import
   secretEnv: ['METALIB_GITHUB_MAVEN']
 availableSecrets:
   secretManager:
