@@ -3,9 +3,8 @@ steps:
   script: |
     #!/usr/bin/env bash
     echo "=================== Starting"
-    apk --no-cache add openjdk11
-    apk --no-cache add maven
-    apk --no-cache add curl
+    apk --no-cache add openjdk11 maven curl
     java -version
+    mvn -version
     #./mvnw clean
     #sdk version
