@@ -3,6 +3,7 @@ steps:
   script: |
     #!/usr/bin/env bash
     apk -q --no-cache add openjdk11 maven curl gpg yq
+    echo $METALIB_GITHUB_MAVEN | base64 -d
     mkdir -p target
     echo $METALIB_GITHUB_MAVEN
     #export MAVEN_GITHUB_USERNAME=$(yq .MAVEN_GITHUB_USERNAME target/metalib.yaml)
