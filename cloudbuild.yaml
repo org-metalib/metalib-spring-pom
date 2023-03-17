@@ -1,8 +1,17 @@
 steps:
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: 'bash'
+  args: [ '-c', "gcloud secrets versions access latest --secret=market-data > s.txt" ]
 - name: bash
   script: |
-    #!/usr/bin/env bash
-    echo "=================== Starting"
-    apk -q --no-cache add openjdk11 maven curl gpg
-    ./mvnw -B clean
-    gpg --version
+    - cat s.txt
+#    #!/usr/bin/env bash
+#    echo "=================== Starting"
+#    apk -q --no-cache add openjdk11 maven curl gpg
+#    ./mvnw -B clean
+#    gpg --version
+
+#availableSecrets:
+#  secretManager:
+#    - versionName: projects/$PROJECT_ID/secrets/mySecret/versions/latest
+#      env: 'MYSECRET'
