@@ -3,4 +3,6 @@ steps:
   script: |
     #!/usr/bin/env bash
     echo "=================== Starting"
-    cat /etc/os-release
+    curl -s "https://get.sdkman.io" | bash
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+    sdk version
