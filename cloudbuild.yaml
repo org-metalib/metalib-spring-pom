@@ -4,6 +4,6 @@ steps:
     #!/usr/bin/env bash
     echo "=================== Starting"
     apk --no-cache add curl
-    #curl -s "https://get.sdkman.io" | bash
-    #source "$HOME/.sdkman/bin/sdkman-init.sh"
-    #sdk version
+    curl -s "https://get.sdkman.io" | bash
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+    sdk version
