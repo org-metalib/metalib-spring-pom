@@ -3,7 +3,7 @@ steps:
   script: |
     #!/usr/bin/env bash
     echo "=================== Starting"
-    apk --no-cache add curl
+    apk --no-cache add curl && apk --no-cache add zip
     curl -s "https://get.sdkman.io" | bash
     source "$HOME/.sdkman/bin/sdkman-init.sh"
     sdk version
