@@ -1,6 +1,7 @@
 steps:
 - name: bash
   script: |
+    - #!/usr/bin/env bash
     - echo $MARKET_DATA
   secretEnv: ['MARKET_DATA']
 availableSecrets:
