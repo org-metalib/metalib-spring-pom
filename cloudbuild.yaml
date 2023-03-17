@@ -3,7 +3,7 @@ steps:
   script: |
     #!/usr/bin/env bash
     echo "Hello World"
-#  secretEnv: ['MARKET_DATA']
+  secretEnv: ['MARKET_DATA']
 availableSecrets:
   secretManager:
     - versionName: projects/$PROJECT_ID/secrets/market-data/versions/latest
