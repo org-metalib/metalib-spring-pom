@@ -2,7 +2,7 @@ steps:
 - name: bash
   script: |
     #!/usr/bin/env bash
-    apk -q --no-cache add openjdk11 maven curl gpg yq
+    apk -q --no-cache add openjdk11 maven curl gpg gpg-agent yq
     export MAVEN_GITHUB_USERNAME=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .MAVEN_GITHUB_USERNAME)
     export MAVEN_GITHUB_PASSWORD=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .MAVEN_GITHUB_PASSWORD)
     export OSSRH_USERNAME=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_USERNAME)
