@@ -2,13 +2,14 @@ steps:
 - name: bash
   script: |
     #!/usr/bin/env bash
-    echo "Hello World"
-    echo $MARKET_DATA
-  secretEnv: ['MARKET_DATA']
+    mkdir -p target
+    echo $METALIB-GITHUB-MAVEN > target/metalib.yaml
+    ls
+  secretEnv: ['METALIB-GITHUB-MAVEN']
 availableSecrets:
   secretManager:
-    - versionName: projects/$PROJECT_ID/secrets/market-data/versions/latest
-      env: 'MARKET_DATA'
+    - versionName: projects/$PROJECT_ID/secrets/metalib-github-maven/versions/latest
+      env: 'METALIB-GITHUB-MAVEN'
 
 # 549588183482@cloudbuild.gserviceaccount.com
 #    #!/usr/bin/env bash
