@@ -13,11 +13,11 @@ steps:
     #yq .OSSRH_GPG_PASSPHRASE target/metalib.yaml
     #yq .OSSRH_PUBLIC_KEY target/metalib.yaml 
     #yq .OSSRH_PRIVATE_KEY target/metalib.yaml > ~/.ssh/ossrh-gpg-private.txt
-  secretEnv: ['METALIB-GITHUB-MAVEN']
+  secretEnv: ['METALIB_GITHUB_MAVEN']
 availableSecrets:
   secretManager:
     - versionName: projects/$PROJECT_ID/secrets/metalib-github-maven/versions/latest
-      env: 'METALIB-GITHUB-MAVEN'
+      env: 'METALIB_GITHUB_MAVEN'
 
 # 549588183482@cloudbuild.gserviceaccount.com
 #    #!/usr/bin/env bash
