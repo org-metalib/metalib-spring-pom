@@ -2,9 +2,10 @@ steps:
 - name: bash
   script: |
     #!/usr/bin/env bash
+    apk -q --no-cache add openjdk11 maven curl gpg yq
     mkdir -p target
     echo $METALIB-GITHUB-MAVEN > target/metalib.yaml
-    ls
+    yq .MAVEN_GITHUB_USERNAME target/metalib.yaml
   secretEnv: ['METALIB-GITHUB-MAVEN']
 availableSecrets:
   secretManager:
