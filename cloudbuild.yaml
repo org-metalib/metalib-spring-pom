@@ -5,5 +5,5 @@ steps:
     echo "=================== Starting"
     apk --no-cache add curl && apk --no-cache add zip
     curl -s "https://get.sdkman.io" | bash
-    source "$HOME/.sdkman/bin/sdkman-init.sh"
+    source "/builder/home/.sdkman/bin/sdkman-init.sh"
     sdk version
