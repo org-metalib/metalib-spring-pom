@@ -10,6 +10,13 @@ steps:
     export OSSRH_GPG_PASSPHRASE=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_GPG_PASSPHRASE)
     echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PUBLIC_KEY | gpg --batch --import
     echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PRIVATE_KEY | gpg --batch --import
+    ./mvnw -B -s ./.mvn/settings.xml \
+      release:prepare \
+      release:perform \
+      -DskipTests=true \
+      -Djava.security.egd=file:/dev/./urandom \
+      -DscmCommentPrefix="[mvn-release] " \
+      -Prelease-sign-artifacts
   secretEnv: ['METALIB_GITHUB_MAVEN']
 availableSecrets:
   secretManager:
