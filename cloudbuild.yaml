@@ -3,6 +3,6 @@ steps:
   script: |
     #!/usr/bin/env bash
     echo "=================== Starting"
-    apk --no-cache add openjdk11 maven curl
+    apk --no-cache add openjdk11 maven curl gpg
     ./mvnw -B clean
     gpg --version
