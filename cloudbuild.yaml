@@ -7,4 +7,6 @@ steps:
     curl -s "https://get.sdkman.io" | bash
     source "/builder/home/.sdkman/bin/sdkman-init.sh"
     sdk install java 11.0.18-tem
+    sdk install maven
+    mvn -version
     #sdk version
