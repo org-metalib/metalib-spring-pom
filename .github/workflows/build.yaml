@@ -17,18 +17,15 @@ jobs:
           cache: 'maven'
       - name: import GPG key
         run: |
-          mkdir -p ~/.ssh
-          echo "$OSSRH_GPG_PRIVATE_KEY" > ~/.ssh/ossrh-gpg-private.txt 
-          echo "$OSSRH_GPG_PUBLIC_KEY" > ~/.ssh/ossrh-gpg-public.txt
-          gpg --batch --import ~/.ssh/ossrh-gpg-public.txt
-          echo "$OSSRH_GPG_PASSPHRASE" | gpg --batch --import ~/.ssh/ossrh-gpg-private.txt
+          echo $OSSRH_GPG_PUBLIC_KEY | base64 -d | gpg --batch --import
+          echo $OSSRH_GPG_PRIVATE_KEY | base64 -d | gpg --batch --import
       - name: git config
         run: |
           git config --global user.email "ikatraev@gmail.com"
           git config --global user.name "Igor Katrayev"
       - name: release maven artifact
         run: |
-          ./mvnw -X -s ./.mvn/settings.xml release:prepare release:perform -B -DskipTests=true -Djava.security.egd=file:/dev/./urandom -DscmCommentPrefix="[mvn-release] " -Prelease-sign-artifacts
+          ./mvnw -s ./.mvn/settings.xml release:prepare release:perform -B -DskipTests=true -Djava.security.egd=file:/dev/./urandom -DscmCommentPrefix="[mvn-release] " -Prelease-sign-artifacts
     env:
       GITHUB_TOKEN: ${{ github.token }}
       MAVEN_GITHUB_USERNAME: ${{ secrets.MAVEN_GITHUB_USERNAME }}

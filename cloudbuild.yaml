@@ -12,21 +12,9 @@ steps:
     echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PRIVATE_KEY | gpg --batch --import
     git config --global user.email "ikatraev@gmail.com"
     git config --global user.name "ikatraev"
-    ./mvnw -s ./.mvn/settings.xml release:prepare release:perform -B -DskipTests=true -Djava.security.egd=file:/dev/./urandom -DscmCommentPrefix="[mvn-release] " -Prelease-sign-artifacts
+    ./mvnw -B -s ./.mvn/settings.xml release:prepare release:perform -DskipTests=true -Djava.security.egd=file:/dev/./urandom -DscmCommentPrefix="[mvn-release] " -Prelease-sign-artifacts
   secretEnv: ['METALIB_GITHUB_MAVEN']
 availableSecrets:
   secretManager:
     - versionName: projects/$PROJECT_ID/secrets/metalib-github-maven/versions/latest
       env: 'METALIB_GITHUB_MAVEN'
-
-# 549588183482@cloudbuild.gserviceaccount.com
-#    #!/usr/bin/env bash
-#    echo "=================== Starting"
-#    apk -q --no-cache add openjdk11 maven curl gpg
-#    ./mvnw -B clean
-#    gpg --version
-
-#availableSecrets:
-#  secretManager:
-#    - versionName: projects/$PROJECT_ID/secrets/mySecret/versions/latest
-#      env: 'MYSECRET'
