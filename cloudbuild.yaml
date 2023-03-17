@@ -1,7 +1,7 @@
 steps:
 - name: bash
   script: |
-    - echo $$MARKET_DATA
+    - echo $MARKET_DATA
   secretEnv: ['MARKET_DATA']
 availableSecrets:
   secretManager:
