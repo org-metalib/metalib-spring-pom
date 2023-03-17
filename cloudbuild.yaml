@@ -5,7 +5,14 @@ steps:
     apk -q --no-cache add openjdk11 maven curl gpg yq
     mkdir -p target
     echo $METALIB-GITHUB-MAVEN > target/metalib.yaml
-    yq .MAVEN_GITHUB_USERNAME target/metalib.yaml
+    export MAVEN_GITHUB_USERNAME=$(yq .MAVEN_GITHUB_USERNAME target/metalib.yaml)
+    echo $MAVEN_GITHUB_USERNAME
+    #yq .MAVEN_GITHUB_PASSWORD target/metalib.yaml
+    #yq .OSSRH_USERNAME target/metalib.yaml
+    #yq .OSSRH_PASSWORD target/metalib.yaml
+    #yq .OSSRH_GPG_PASSPHRASE target/metalib.yaml
+    #yq .OSSRH_PUBLIC_KEY target/metalib.yaml 
+    #yq .OSSRH_PRIVATE_KEY target/metalib.yaml > ~/.ssh/ossrh-gpg-private.txt
   secretEnv: ['METALIB-GITHUB-MAVEN']
 availableSecrets:
   secretManager:
