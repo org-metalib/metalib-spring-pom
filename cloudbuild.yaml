@@ -4,16 +4,13 @@ steps:
     #!/usr/bin/env bash
     apk -q --no-cache add openjdk11 maven curl gpg yq
     export MAVEN_GITHUB_USERNAME=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .MAVEN_GITHUB_USERNAME)
+    export MAVEN_GITHUB_PASSWORD=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .MAVEN_GITHUB_PASSWORD)
+    export OSSRH_USERNAME=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_USERNAME)
+    export OSSRH_PASSWORD=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PASSWORD)
+    export OSSRH_GPG_PASSPHRASE=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_GPG_PASSPHRASE)
+    export OSSRH_PUBLIC_KEY=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PUBLIC_KEY)
+    export OSSRH_PRIVATE_KEY=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PRIVATE_KEY)
     echo $MAVEN_GITHUB_USERNAME
-    mkdir -p target
-    #export MAVEN_GITHUB_USERNAME=$(yq .MAVEN_GITHUB_USERNAME target/metalib.yaml)
-    #echo $MAVEN_GITHUB_USERNAME
-    #yq .MAVEN_GITHUB_PASSWORD target/metalib.yaml
-    #yq .OSSRH_USERNAME target/metalib.yaml
-    #yq .OSSRH_PASSWORD target/metalib.yaml
-    #yq .OSSRH_GPG_PASSPHRASE target/metalib.yaml
-    #yq .OSSRH_PUBLIC_KEY target/metalib.yaml 
-    #yq .OSSRH_PRIVATE_KEY target/metalib.yaml > ~/.ssh/ossrh-gpg-private.txt
   secretEnv: ['METALIB_GITHUB_MAVEN']
 availableSecrets:
   secretManager:
