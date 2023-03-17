@@ -5,8 +5,10 @@ steps:
   secretEnv: ['MARKET_DATA']
 availableSecrets:
   secretManager:
-    - versionName: projects/549588183482/secrets/market-data
+    - versionName: projects/$PROJECT_ID/secrets/market-data/versions/latest
       env: 'MARKET_DATA'
+
+# 549588183482@cloudbuild.gserviceaccount.com
 #    #!/usr/bin/env bash
 #    echo "=================== Starting"
 #    apk -q --no-cache add openjdk11 maven curl gpg
