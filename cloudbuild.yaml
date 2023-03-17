@@ -4,7 +4,5 @@ steps:
     #!/usr/bin/env bash
     echo "=================== Starting"
     apk --no-cache add openjdk11 maven curl
-    java -version
-    mvn -version
-    #./mvnw clean
+    ./mvnw clean
     #sdk version
