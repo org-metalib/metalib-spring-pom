@@ -4,7 +4,7 @@ steps:
     #!/usr/bin/env bash
     apk -q --no-cache add openjdk11 maven curl gpg yq
     mkdir -p target
-    echo $METALIB-GITHUB-MAVEN > target/metalib.yaml
+    echo $METALIB_GITHUB_MAVEN > target/metalib.yaml
     export MAVEN_GITHUB_USERNAME=$(yq .MAVEN_GITHUB_USERNAME target/metalib.yaml)
     echo $MAVEN_GITHUB_USERNAME
     #yq .MAVEN_GITHUB_PASSWORD target/metalib.yaml
