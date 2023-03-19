@@ -19,6 +19,7 @@
         <jackson.version>2.14.2</jackson.version>
         <spring-framework.version>5.3.25</spring-framework.version>
         <spring-boot.version>2.7.9</spring-boot.version>
+        <google-cloud.libraries-bom.version>26.10.0</google-cloud.libraries-bom.version>
 
         <!-- Plugin and Project Build -->
         <maven.compiler.source>11</maven.compiler.source>
@@ -144,6 +145,13 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.cloud</groupId>
+                <artifactId>libraries-bom</artifactId>
+                <version>${google-cloud.libraries-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
