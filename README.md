@@ -21,3 +21,6 @@ Print version properties:
 ```shell
 mvn versions:display-property-updates
 ```
+
+## References
+* [Spring: System Requirements](https://docs.spring.io/spring-boot/system-requirements.html)
