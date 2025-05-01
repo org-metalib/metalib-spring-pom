@@ -1,6 +1,7 @@
 /.idea/
 /target/
 .env
+*.versionsBackup
 config/
 
 # Compiled class file
