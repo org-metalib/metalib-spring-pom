@@ -25,7 +25,7 @@ jobs:
       - name: git config
         run: |
           git config --global user.email "ikatraev@gmail.com"
-          git config --global user.name "$GITHUB_USER"
+          git config --global user.name "Igor Katrayev"
       - name: release maven artifact
         run: |
           ./mvnw -s ./.mvn/settings.xml release:prepare release:perform -B -DskipTests=true -Djava.security.egd=file:/dev/./urandom -DscmCommentPrefix="[mvn-release] " -Prelease-sign-artifacts
