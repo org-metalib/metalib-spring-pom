@@ -12,6 +12,9 @@
     <url>https://github.com/org-metalib/metalib-spring-pom</url>
 
     <properties>
+        <gcp.project-id/>
+        <gcp.secrets.local/>
+        <gcp.secrets.dir>${project.basedir}/target/.secrets</gcp.secrets.dir>
 
         <lombok.version>1.18.38</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
@@ -20,11 +23,9 @@
         <spring-framework.version>6.2.5</spring-framework.version>
         <spring-boot.version>3.4.4</spring-boot.version>
         <google-cloud.libraries-bom.version>26.59.0</google-cloud.libraries-bom.version>
-
-        <!-- Plugin and Project Build -->
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <awssdk.version>2.31.23</awssdk.version>
+        <json-path.version>2.9.0</json-path.version>
+        <dotenv-java.version>3.2.0</dotenv-java.version>
 
         <maven.version>3.9.9</maven.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
@@ -94,11 +95,14 @@
         <l10n-maven-plugin.version>1.1.0</l10n-maven-plugin.version>
         <sonar-maven-plugin.version>5.1.0.4751</sonar-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
+        <docker-maven-plugin.version>v0.46.0</docker-maven-plugin.version>
+        <gcloud-secret-maven-plugin.version>0.0.1</gcloud-secret-maven-plugin.version>
+        <json-path-maven-plugin.version>0.0.2</json-path-maven-plugin.version>
 
-        <!-- -->
-        <maven-jaxb2-plugin.version>0.15.3</maven-jaxb2-plugin.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 
     <dependencies>
         <dependency>
@@ -117,6 +121,16 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.jayway.jsonpath</groupId>
+                <artifactId>json-path</artifactId>
+                <version>${json-path.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.cdimascio</groupId>
+                <artifactId>dotenv-java</artifactId>
+                <version>${dotenv-java.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
@@ -152,6 +166,13 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>bom</artifactId>
+                <version>${awssdk.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>extra-enforcer-rules</artifactId>
                 <version>${extra-enforcer-rules.version}</version>
@@ -167,8 +188,24 @@
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <autoResolveSnapshots>all</autoResolveSnapshots>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.5.0</version>
                 <executions>
                     <execution>
                         <id>enforce-maven</id>
@@ -184,6 +221,19 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>.</directory>
+                            <includes>
+                                <include>**/.env</include>
+                            </includes>
+                        </fileset>
+                    </filesets>
+                </configuration>
             </plugin>
         </plugins>
         <pluginManagement>
@@ -480,7 +530,21 @@
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${jacoco-maven-plugin.version}</version>
                 </plugin>
-
+                <plugin>
+                    <groupId>org.metalib.gcloud.secrets</groupId>
+                    <artifactId>gcloud-secret-maven-plugin</artifactId>
+                    <version>${gcloud-secret-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.metalib.maven.plugin</groupId>
+                    <artifactId>json-path-maven-plugin</artifactId>
+                    <version>${json-path-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>io.fabric8</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>${docker-maven-plugin.version}</version>
+                </plugin>
                 <plugin>
                     <groupId>org.jvnet.jaxb2.maven2</groupId>
                     <artifactId>maven-jaxb2-plugin</artifactId>
@@ -491,35 +555,68 @@
     </build>
 
     <profiles>
-        <!-- GPG Signature on release -->
         <profile>
-            <id>release-sign-artifacts</id>
+            <id>gcp-secrets</id>
             <activation>
                 <property>
-                    <name>performRelease</name>
-                    <value>true</value>
+                    <name>gcp-secrets.profile</name>
+                    <value>yes</value>
                 </property>
             </activation>
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>${maven-gpg-plugin.version}</version>
+                        <groupId>org.metalib.gcloud.secrets</groupId>
+                        <artifactId>gcloud-secret-maven-plugin</artifactId>
+                        <configuration>
+                            <secretProject>${gcp.project-id}</secretProject>
+                            <secretDir>${gcp.secrets.dir}</secretDir>
+                            <secrets>
+                                <secret>${gcp.secrets.local}</secret>
+                            </secrets>
+                        </configuration>
                         <executions>
                             <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
+                                <phase>validate</phase>
                                 <goals>
-                                    <goal>sign</goal>
+                                    <goal>secret-get</goal>
                                 </goals>
-                                <configuration>
-                                    <passphrase>${gpg.passphrase}</passphrase>
-                                    <gpgArguments>
-                                        <arg>--pinentry-mode</arg>
-                                        <arg>loopback</arg>
-                                    </gpgArguments>
-                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>dotenv</id>
+            <activation>
+                <property>
+                    <name>dotenv.profile</name>
+                    <value>yes</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.metalib.maven.plugin</groupId>
+                        <artifactId>json-path-maven-plugin</artifactId>
+                        <version>${json-path-maven-plugin.version}</version>
+                        <configuration>
+                            <paths>
+                                <path>
+                                    <file>${gcp.secrets.dir}/${gcp.secrets.local}</file>
+                                    <queryMaps>
+                                        <POLYGON_API_KEY>$.polygon.api-key</POLYGON_API_KEY>
+                                    </queryMaps>
+                                </path>
+                            </paths>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>paths</goal>
+                                </goals>
                             </execution>
                         </executions>
                     </plugin>
