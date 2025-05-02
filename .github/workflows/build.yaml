@@ -24,8 +24,8 @@ jobs:
           echo $OSSRH_GPG_PRIVATE_KEY | base64 -d | gpg --batch --import
       - name: git config
         run: |
-          git config --global user.email "ikatraev@gmail.com"
-          git config --global user.name "Igor Katrayev"
+          git config --global user.email "${GIT_CONFIG_USER_EMAIL}"
+          git config --global user.name "${GIT_CONFIG_USER_NAME}"
       - name: release maven artifact
         run: |
           ./mvnw -s ./.mvn/settings.xml release:prepare release:perform -B -DskipTests=true -Djava.security.egd=file:/dev/./urandom -DscmCommentPrefix="[mvn-release] " -Prelease-sign-artifacts
