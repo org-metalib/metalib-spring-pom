@@ -5,6 +5,8 @@ steps:
     apk -q --no-cache add openjdk11 maven curl gpg gpg-agent yq git
     export MAVEN_GITHUB_USERNAME=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .MAVEN_GITHUB_USERNAME)
     export MAVEN_GITHUB_PASSWORD=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .MAVEN_GITHUB_PASSWORD)
+    export OSSRH_TOKEN_USERNAME=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_TOKEN_USERNAME)
+    export OSSRH_TOKEN_PASSWORD=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_TOKEN_PASSWORD)
     export OSSRH_USERNAME=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_USERNAME)
     export OSSRH_PASSWORD=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_PASSWORD)
     export OSSRH_GPG_PASSPHRASE=$(echo $METALIB_GITHUB_MAVEN | base64 -d | yq .OSSRH_GPG_PASSPHRASE)
