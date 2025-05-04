@@ -68,6 +68,8 @@
         <maven-scm-plugin.version>2.1.0</maven-scm-plugin.version>
         <maven-scm-publish-plugin.version>3.3.0</maven-scm-publish-plugin.version>
 
+        <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
+
         <!-- https://www.mojohaus.org/plugins.html -->
         <animal-sniffer-maven-plugin.version>1.24</animal-sniffer-maven-plugin.version>
         <animal-sniffer-enforcer-rule.version>1.24</animal-sniffer-enforcer-rule.version>
@@ -234,6 +236,10 @@
                         </fileset>
                     </filesets>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
             </plugin>
         </plugins>
         <pluginManagement>
@@ -403,6 +409,16 @@
                 <plugin>
                     <artifactId>maven-scm-publish-plugin</artifactId>
                     <version>${maven-scm-publish-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>${central-publishing-maven-plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <publishingServerId>central</publishingServerId>
+                    </configuration>
                 </plugin>
 
                 <plugin>
