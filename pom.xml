@@ -417,7 +417,8 @@
                     <version>${central-publishing-maven-plugin.version}</version>
                     <extensions>true</extensions>
                     <configuration>
-                        <publishingServerId>central</publishingServerId>
+                        <publishingServerId>ossrh</publishingServerId>
+                        <autoPublish>true</autoPublish>
                     </configuration>
                 </plugin>
 
