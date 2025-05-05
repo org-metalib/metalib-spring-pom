@@ -4,7 +4,7 @@
 
     <groupId>org.metalib.maven.pom</groupId>
     <artifactId>metalib-spring-pom</artifactId>
-    <version>0.0.51</version>
+    <version>0.0.52-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>metalib-spring-pom</name>
@@ -721,6 +721,6 @@
         <connection>scm:git:git://github.com/org-metalib/metalib-spring-pom.git</connection>
         <developerConnection>scm:git:https://github.com/org-metalib/metalib-spring-pom.git</developerConnection>
         <url>https://github.com/org-metalib/metalib-spring-pom</url>
-        <tag>v0.0.51</tag>
+        <tag>metalib-spring-pom-0.0.16</tag>
     </scm>
 </project>
