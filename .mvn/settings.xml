@@ -28,6 +28,7 @@
             </activation>
             <properties>
                 <project.scm.id>github</project.scm.id>
+                <gpg.executable>gpg2</gpg.executable>
                 <gpg.passphrase>${env.OSSRH_GPG_PASSPHRASE}</gpg.passphrase>
             </properties>
         </profile>
