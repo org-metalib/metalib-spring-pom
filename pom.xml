@@ -556,7 +556,7 @@
                     <version>${jacoco-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.metalib.gcloud.secrets</groupId>
+                    <groupId>org.metalib.maven.plugin</groupId>
                     <artifactId>gcloud-secret-maven-plugin</artifactId>
                     <version>${gcloud-secret-maven-plugin.version}</version>
                 </plugin>
@@ -641,7 +641,7 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.metalib.gcloud.secrets</groupId>
+                        <groupId>org.metalib.maven.plugin</groupId>
                         <artifactId>gcloud-secret-maven-plugin</artifactId>
                         <configuration>
                             <secretProject>${gcp.project-id}</secretProject>
