@@ -19,11 +19,11 @@
         <lombok.version>1.18.38</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <junit.version>5.12.1</junit.version>
-        <jackson.version>2.18.3</jackson.version>
-        <spring-framework.version>6.2.5</spring-framework.version>
-        <spring-boot.version>3.4.4</spring-boot.version>
+        <jackson.version>2.19.0</jackson.version>
+        <spring-framework.version>6.2.6</spring-framework.version>
+        <spring-boot.version>3.4.5</spring-boot.version>
         <google-cloud.libraries-bom.version>26.59.0</google-cloud.libraries-bom.version>
-        <awssdk.version>2.31.23</awssdk.version>
+        <awssdk.version>2.31.35</awssdk.version>
         <json-path.version>2.9.0</json-path.version>
         <dotenv-java.version>3.2.0</dotenv-java.version>
 
@@ -97,7 +97,7 @@
         <l10n-maven-plugin.version>1.1.0</l10n-maven-plugin.version>
         <sonar-maven-plugin.version>5.1.0.4751</sonar-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
-        <docker-maven-plugin.version>v0.46.0</docker-maven-plugin.version>
+        <docker-maven-plugin.version>0.46.0</docker-maven-plugin.version>
         <gcloud-secret-maven-plugin.version>0.0.1</gcloud-secret-maven-plugin.version>
         <json-path-maven-plugin.version>0.0.2</json-path-maven-plugin.version>
 
