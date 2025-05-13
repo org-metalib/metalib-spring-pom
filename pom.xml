@@ -120,6 +120,7 @@
         <sonar-maven-plugin.version>5.1.0.4751</sonar-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
         <docker-maven-plugin.version>0.46.0</docker-maven-plugin.version>
+        <maven-jaxb2-plugin.version>0.15.3</maven-jaxb2-plugin.version>
         <gcloud-secret-maven-plugin.version>0.0.3</gcloud-secret-maven-plugin.version>
         <json-path-maven-plugin.version>0.0.5</json-path-maven-plugin.version>
 
@@ -622,6 +623,7 @@
                     <version>${maven-archetype-plugin.version}</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.maven.archetype</groupId>
                     <artifactId>archetype-packaging</artifactId>
                     <version>${archetype-packaging.version}</version>
                 </plugin>
