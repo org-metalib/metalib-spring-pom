@@ -124,6 +124,7 @@
         <maven-jaxb2-plugin.version>0.15.3</maven-jaxb2-plugin.version>
         <gcloud-secret-maven-plugin.version>0.0.3</gcloud-secret-maven-plugin.version>
         <json-path-maven-plugin.version>0.0.5</json-path-maven-plugin.version>
+        <directory-maven-plugin.version>1.2.1</directory-maven-plugin.version>
 
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -788,6 +789,11 @@
                     <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
                     <version>${sonar-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.hazendaz.maven</groupId>
+                    <artifactId>directory-maven-plugin</artifactId>
+                    <version>${directory-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
