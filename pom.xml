@@ -126,6 +126,7 @@
         <json-path-maven-plugin.version>0.0.5</json-path-maven-plugin.version>
         <directory-maven-plugin.version>1.2.1</directory-maven-plugin.version>
         <plantuml-maven-plugin.version>0.4.6</plantuml-maven-plugin.version>
+        <plantuml.version>1.2025.2</plantuml.version>
         <git-properties-maven-plugin.version>0.2</git-properties-maven-plugin.version>
 
         <maven.compiler.source>21</maven.compiler.source>
@@ -356,6 +357,16 @@
                 <groupId>org.eclipse.jgit</groupId>
                 <artifactId>org.eclipse.jgit.gpg.bc</artifactId>
                 <version>${jgit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.mulders.puml</groupId>
+                <artifactId>plantuml-v1-adapter</artifactId>
+                <version>${plantuml-maven-plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sourceforge.plantuml</groupId>
+                <artifactId>plantuml</artifactId>
+                <version>${plantuml.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
