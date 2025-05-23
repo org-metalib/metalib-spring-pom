@@ -125,6 +125,7 @@
         <gcloud-secret-maven-plugin.version>0.0.3</gcloud-secret-maven-plugin.version>
         <json-path-maven-plugin.version>0.0.5</json-path-maven-plugin.version>
         <directory-maven-plugin.version>1.2.1</directory-maven-plugin.version>
+        <plantuml-maven-plugin.version>0.2.13</plantuml-maven-plugin.version>
 
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -794,6 +795,11 @@
                     <groupId>com.github.hazendaz.maven</groupId>
                     <artifactId>directory-maven-plugin</artifactId>
                     <version>${directory-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.davidmoten</groupId>
+                    <artifactId>plantuml-maven-plugin</artifactId>
+                    <version>${plantuml-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
