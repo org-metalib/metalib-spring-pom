@@ -45,6 +45,7 @@
         <plantuml.version>1.2025.2</plantuml.version>
         <archunit.version>1.4.1</archunit.version>
         <value-provider.version>1.4.0</value-provider.version>
+        <javafaker.version>1.0.2</javafaker.version>
         <junit4.version>4.13.2</junit4.version>
 
         <maven.version.required>3.9</maven.version.required>
@@ -390,7 +391,11 @@
                 <artifactId>value-provider-junit4</artifactId>
                 <version>${value-provider.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.github.javafaker</groupId>
+                <artifactId>javafaker</artifactId>
+                <version>${javafaker.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
