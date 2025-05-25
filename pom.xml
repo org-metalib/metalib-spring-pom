@@ -46,6 +46,7 @@
         <archunit.version>1.4.1</archunit.version>
         <value-provider.version>1.4.0</value-provider.version>
         <javafaker.version>1.0.2</javafaker.version>
+        <cucumber.version>7.22.2</cucumber.version>
         <junit4.version>4.13.2</junit4.version>
 
         <maven.version.required>3.9</maven.version.required>
@@ -395,6 +396,13 @@
                 <groupId>com.github.javafaker</groupId>
                 <artifactId>javafaker</artifactId>
                 <version>${javafaker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-bom</artifactId>
+                <version>${cucumber.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
