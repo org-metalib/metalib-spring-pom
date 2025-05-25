@@ -42,13 +42,15 @@
         <jakarta.validation-api.version>3.1.1</jakarta.validation-api.version>
         <jgit.version>7.2.0.202503040940-r</jgit.version>
         <maven-model-helper.version>37</maven-model-helper.version>
+        <plantuml.version>1.2025.2</plantuml.version>
+        <archunit.version>1.4.1</archunit.version>
+        <junit4.version>4.13.2</junit4.version>
 
         <maven.version.required>3.9</maven.version.required>
         <maven.version>3.9.9</maven.version>
         <maven-plugin-annotations.version>3.15.1</maven-plugin-annotations.version>
         <maven-plugin-testing-harness.version>3.3.0</maven-plugin-testing-harness.version>
         <plexus-component.version>2.2.0</plexus-component.version>
-        <junit4.version>4.13.2</junit4.version>
 
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
@@ -126,7 +128,6 @@
         <json-path-maven-plugin.version>0.0.5</json-path-maven-plugin.version>
         <directory-maven-plugin.version>1.2.1</directory-maven-plugin.version>
         <plantuml-maven-plugin.version>0.4.6</plantuml-maven-plugin.version>
-        <plantuml.version>1.2025.2</plantuml.version>
         <git-properties-maven-plugin.version>0.2</git-properties-maven-plugin.version>
 
         <maven.compiler.source>21</maven.compiler.source>
@@ -367,6 +368,11 @@
                 <groupId>net.sourceforge.plantuml</groupId>
                 <artifactId>plantuml</artifactId>
                 <version>${plantuml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tngtech.archunit</groupId>
+                <artifactId>archunit</artifactId>
+                <version>${archunit.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.junit</groupId>
