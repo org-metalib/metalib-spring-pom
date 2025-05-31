@@ -34,7 +34,7 @@
         <openapi-generator.version>7.13.0</openapi-generator.version>
         <jsonschema2pojo.version>1.2.2</jsonschema2pojo.version>
         <ST4.version>4.3.4</ST4.version>
-        <javapoet.version>1.13.0</javapoet.version>
+        <javapoet.version>0.7.0</javapoet.version>
         <guava.version>33.4.8-jre</guava.version>
         <jersey-url-builder.version>0.0.1</jersey-url-builder.version>
         <slf4j.version>2.0.17</slf4j.version>
@@ -236,7 +236,7 @@
                 <version>${snakeyaml.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.squareup</groupId>
+                <groupId>com.palantir.javapoet</groupId>
                 <artifactId>javapoet</artifactId>
                 <version>${javapoet.version}</version>
             </dependency>
