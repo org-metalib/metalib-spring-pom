@@ -1,5 +1,9 @@
 # Metalib Spring POM
 
+[![Maven Central](https://img.shields.io/maven-central/v/org.metalib.maven.pom/metalib-spring-pom.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/org.metalib.maven.pom/metalib-spring-pom)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+
 A comprehensive parent POM for Java Spring Boot applications that provides centralized dependency management,
 plugin configurations, and best practices for enterprise-grade development.
 
@@ -18,10 +22,10 @@ The `metalib-spring-pom` is a Maven parent POM designed to streamline Spring Boo
 ## Key Features
 
 ### 🏗️ **Modern Java Stack**
-- **Java 21** support with optimized compiler settings
+- **Java 21**
 - **Spring Boot 3.4.5** and **Spring Framework 6.2.6**
-- **Lombok 1.18.38** and **MapStruct 1.6.3** for code generation
-- **JUnit 5.12.1** for modern testing practices
+- **Lombok 1.18.38** and **MapStruct 1.6.3**
+- **JUnit 5.12.1**
 
 ### 📦 **Comprehensive Dependency Management**
 - **Cloud Providers**: Google Cloud Platform and AWS SDK integration
@@ -84,13 +88,6 @@ mvn versions:display-plugin-updates
 mvn versions:display-property-updates
 ```
 
-### **Key Properties**
-- `lombok.version`: 1.18.38
-- `spring-boot.version`: 3.4.5
-- `jackson.version`: 2.19.0
-- `junit.version`: 5.12.1
-- `liquibase.version`: 4.31.1
-
 ## Usage Example
 
 ```xml
@@ -130,7 +127,7 @@ mvn versions:display-property-updates
 This parent POM is ideal for:
 - Enterprise Spring Boot applications
 - Microservices architectures
-- Cloud-native applications (GCP)
+- Cloud-native applications (GCP, AWS)
 - Teams requiring standardized build processes
 - Projects needing comprehensive testing and quality tools
 
