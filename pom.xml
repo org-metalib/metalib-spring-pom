@@ -16,60 +16,60 @@
         <gcp.secrets.local />
         <gcp.secrets.dir>${project.basedir}/target/.secrets</gcp.secrets.dir>
 
-        <lombok.version>1.18.38</lombok.version>
+        <lombok.version>1.18.42</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
-        <junit.version>5.13.1</junit.version>
-        <jackson.version>2.19.1</jackson.version>
-        <spring-framework.version>6.2.6</spring-framework.version>
-        <spring-boot.version>3.5.0</spring-boot.version>
-        <google-cloud.libraries-bom.version>26.62.0</google-cloud.libraries-bom.version>
-        <awssdk.version>2.31.63</awssdk.version>
+        <junit.version>6.0.0</junit.version>
+        <jackson.version>2.20.0</jackson.version>
+        <spring-framework.version>6.2.11</spring-framework.version>
+        <spring-boot.version>3.5.6</spring-boot.version>
+        <google-cloud.libraries-bom.version>26.70.0</google-cloud.libraries-bom.version>
+        <awssdk.version>2.35.7</awssdk.version>
         <json-path.version>2.9.0</json-path.version>
         <dotenv-java.version>3.2.0</dotenv-java.version>
-        <liquibase.version>4.32.0</liquibase.version>
+        <liquibase.version>5.0.1</liquibase.version>
         <liquibase-s3-extension.version>1.1.6</liquibase-s3-extension.version>
         <liquibase-r2dbc-spring-boot-starter.version>3.1.3</liquibase-r2dbc-spring-boot-starter.version>
-        <liquibase-spanner.version>4.32.0</liquibase-spanner.version>
-        <snakeyaml.version>2.4</snakeyaml.version>
-        <openapi-generator.version>7.13.0</openapi-generator.version>
+        <liquibase-spanner.version>4.33.0</liquibase-spanner.version>
+        <snakeyaml.version>2.5</snakeyaml.version>
+        <openapi-generator.version>7.16.0</openapi-generator.version>
         <jsonschema2pojo.version>1.2.2</jsonschema2pojo.version>
         <ST4.version>4.3.4</ST4.version>
         <javapoet.version>0.7.0</javapoet.version>
-        <guava.version>33.4.8-jre</guava.version>
+        <guava.version>33.5.0-jre</guava.version>
         <jersey-url-builder.version>0.0.1</jersey-url-builder.version>
         <slf4j.version>2.0.17</slf4j.version>
-        <logback-classic.version>1.5.18</logback-classic.version>
+        <logback-classic.version>1.5.19</logback-classic.version>
         <jakarta.validation-api.version>3.1.1</jakarta.validation-api.version>
-        <jgit.version>7.3.0.202506031305-r</jgit.version>
+        <jgit.version>7.4.0.202509020913-r</jgit.version>
         <maven-model-helper.version>37</maven-model-helper.version>
-        <plantuml.version>1.2025.2</plantuml.version>
+        <plantuml.version>1.2025.8</plantuml.version>
         <archunit.version>1.4.1</archunit.version>
-        <value-provider.version>1.4.0</value-provider.version>
+        <value-provider.version>1.4.2</value-provider.version>
         <javafaker.version>1.0.2</javafaker.version>
-        <cucumber.version>7.22.2</cucumber.version>
+        <cucumber.version>7.30.0</cucumber.version>
         <junit4.version>4.13.2</junit4.version>
 
         <maven.version.required>3.9</maven.version.required>
-        <maven.version>3.9.9</maven.version>
+        <maven.version>3.9.11</maven.version>
         <maven-plugin-annotations.version>3.15.1</maven-plugin-annotations.version>
         <maven-plugin-testing-harness.version>3.3.0</maven-plugin-testing-harness.version>
         <plexus-component.version>2.2.0</plexus-component.version>
 
-        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
-        <maven-surefire-report-plugin.version>3.5.3</maven-surefire-report-plugin.version>
-        <maven-failsafe-plugin.version>3.5.3</maven-failsafe-plugin.version>
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
+        <maven-surefire-report-plugin.version>3.5.4</maven-surefire-report-plugin.version>
+        <maven-failsafe-plugin.version>3.5.4</maven-failsafe-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-        <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
+        <maven-dependency-plugin.version>3.9.0</maven-dependency-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
-        <maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
-        <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
+        <maven-shade-plugin.version>3.6.1</maven-shade-plugin.version>
+        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
         <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
         <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
-        <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
-        <extra-enforcer-rules.version>1.10.0</extra-enforcer-rules.version>
+        <maven-enforcer-plugin.version>3.6.2</maven-enforcer-plugin.version>
+        <extra-enforcer-rules.version>1.11.0</extra-enforcer-rules.version>
         <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
         <maven-project-info-reports-plugin.version>3.9.0</maven-project-info-reports-plugin.version>
         <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
@@ -78,9 +78,9 @@
         <maven-site-plugin.version>3.21.0</maven-site-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
         <maven-jxr-plugin.version>3.6.0</maven-jxr-plugin.version>
-        <maven-pmd-plugin.version>3.26.0</maven-pmd-plugin.version>
+        <maven-pmd-plugin.version>3.28.0</maven-pmd-plugin.version>
         <maven-help-plugin.version>3.5.1</maven-help-plugin.version>
-        <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
+        <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <maven-jarsigner-plugin.version>3.1.0</maven-jarsigner-plugin.version>
         <maven-changes-plugin.version>2.12.1</maven-changes-plugin.version>
         <maven-remote-resources-plugin.version>3.3.0</maven-remote-resources-plugin.version>
@@ -89,48 +89,48 @@
         <maven-changelog-plugin.version>3.0.0-M1</maven-changelog-plugin.version>
         <maven-artifact-plugin.version>3.9.9</maven-artifact-plugin.version>
         <maven-plugin-plugin.version>3.15.1</maven-plugin-plugin.version>
-        <maven-invoker-plugin.version>3.9.0</maven-invoker-plugin.version>
-        <maven-archetype-plugin.version>3.4.0</maven-archetype-plugin.version>
-        <archetype-packaging.version>3.4.0</archetype-packaging.version>
+        <maven-invoker-plugin.version>3.9.1</maven-invoker-plugin.version>
+        <maven-archetype-plugin.version>3.4.1</maven-archetype-plugin.version>
+        <archetype-packaging.version>3.4.1</archetype-packaging.version>
         <maven-toolchains-plugin.version>3.2.0</maven-toolchains-plugin.version>
-        <maven-scm-plugin.version>2.1.0</maven-scm-plugin.version>
+        <maven-scm-plugin.version>2.2.1</maven-scm-plugin.version>
         <maven-scm-publish-plugin.version>3.3.0</maven-scm-publish-plugin.version>
 
-        <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
 
         <!-- https://www.mojohaus.org/plugins.html -->
-        <animal-sniffer-maven-plugin.version>1.24</animal-sniffer-maven-plugin.version>
-        <animal-sniffer-enforcer-rule.version>1.24</animal-sniffer-enforcer-rule.version>
-        <versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
-        <exec-maven-plugin.version>3.5.1</exec-maven-plugin.version>
+        <animal-sniffer-maven-plugin.version>1.26</animal-sniffer-maven-plugin.version>
+        <animal-sniffer-enforcer-rule.version>1.26</animal-sniffer-enforcer-rule.version>
+        <versions-maven-plugin.version>2.19.1</versions-maven-plugin.version>
+        <exec-maven-plugin.version>3.6.1</exec-maven-plugin.version>
         <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <truezip-maven-plugin.version>1.2</truezip-maven-plugin.version>
-        <license-maven-plugin.version>2.5.0</license-maven-plugin.version>
+        <license-maven-plugin.version>2.7.0</license-maven-plugin.version>
         <wagon-maven-plugin.version>2.0.2</wagon-maven-plugin.version>
         <sql-maven-plugin.version>3.0.0</sql-maven-plugin.version>
         <appassembler-maven-plugin.version>2.1.0</appassembler-maven-plugin.version>
-        <flatten-maven-plugin.version>1.7.0</flatten-maven-plugin.version>
+        <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
         <javacc-maven-plugin.version>3.1.1</javacc-maven-plugin.version>
         <jaxb2-maven-plugin.version>3.3.0</jaxb2-maven-plugin.version>
         <aspectj-maven-plugin.version>1.15.0</aspectj-maven-plugin.version>
-        <cassandra-maven-plugin.version>4.0.0</cassandra-maven-plugin.version>
+        <cassandra-maven-plugin.version>4.1.10.0</cassandra-maven-plugin.version>
         <xml-maven-plugin.version>1.1.0</xml-maven-plugin.version>
         <taglist-maven-plugin.version>3.2.1</taglist-maven-plugin.version>
-        <mrm-maven-plugin.version>1.6.0</mrm-maven-plugin.version>
+        <mrm-maven-plugin.version>1.7.0</mrm-maven-plugin.version>
         <buildnumber-maven-plugin.version>3.2.1</buildnumber-maven-plugin.version>
         <scmchangelog-maven-plugin.version>1.3</scmchangelog-maven-plugin.version>
         <buildplan-maven-plugin.version>2.2.2</buildplan-maven-plugin.version>
         <servicedocgen-maven-plugin.version>1.0.0</servicedocgen-maven-plugin.version>
         <l10n-maven-plugin.version>1.1.0</l10n-maven-plugin.version>
-        <sonar-maven-plugin.version>5.1.0.4751</sonar-maven-plugin.version>
-        <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
+        <sonar-maven-plugin.version>5.2.0.4988</sonar-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
         <docker-maven-plugin.version>0.46.0</docker-maven-plugin.version>
         <maven-jaxb2-plugin.version>0.15.3</maven-jaxb2-plugin.version>
         <gcloud-secret-maven-plugin.version>0.0.3</gcloud-secret-maven-plugin.version>
         <json-path-maven-plugin.version>0.0.5</json-path-maven-plugin.version>
-        <directory-maven-plugin.version>1.2.1</directory-maven-plugin.version>
-        <plantuml-maven-plugin.version>0.4.6</plantuml-maven-plugin.version>
+        <directory-maven-plugin.version>1.2.2</directory-maven-plugin.version>
+        <plantuml-maven-plugin.version>0.4.9</plantuml-maven-plugin.version>
         <git-properties-maven-plugin.version>0.2</git-properties-maven-plugin.version>
 
         <maven.compiler.source>21</maven.compiler.source>
